@@ -46,14 +46,11 @@ public class AgeCalculatorServlet extends HttpServlet {
 
                     String message = String.format("You will be %d after your next birthday.", age);
 
-                    request.setAttribute("message", message);
-                } catch (Exception ex) {
+                request.setAttribute("message", message);
+            } catch (NumberFormatException ex) {
 
                     request.setAttribute("message", "Enter a Number");
                 }
-
-
-
         } else {
 
                     request.setAttribute("message", "Enter a Age");
